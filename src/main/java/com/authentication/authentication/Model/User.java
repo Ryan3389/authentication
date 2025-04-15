@@ -27,7 +27,7 @@ public class User {
     @Column(name = "verification_code")
     private String verificationCode;
 
-    
+
     private LocalDateTime verificationCodeExpiration;
 
     private boolean enabled;
