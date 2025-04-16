@@ -36,6 +36,15 @@ public class User implements UserDetails {
 
     private boolean enabled;
 
+    public User() {
+
+    }
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
     // Manage user roles
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
