@@ -1,9 +1,11 @@
 package com.authentication.authentication.Service;
 
+import com.authentication.authentication.DTO.LoginDTO;
 import com.authentication.authentication.DTO.RegisterUserDTO;
 import com.authentication.authentication.Model.User;
 import com.authentication.authentication.Repository.UserRepository;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -36,6 +38,21 @@ public class AuthenticationService {
         user.setEnabled(false);
         // Return user
         return userRepository.save(user);
+    }
+
+
+    public User loginUser(LoginDTO userInput) {
+        // Find user by email
+        User user = userRepository.findByEmail(userInput.getEmail())
+                .orElseThrow(() -> new RuntimeException("Could not find user with email " + userInput.getEmail()));
+        if(!user.isEnabled()) {
+            throw new RuntimeException("Please verify your account before logging in");
+        }
+
+        // Verifies if user email/password is correct
+        authenticationManager.authenticate( new UsernamePasswordAuthenticationToken(userInput.getEmail(), userInput.getPassword()));
+
+        return user;
     }
 
     public String generateVerificationCode() {
