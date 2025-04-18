@@ -40,6 +40,7 @@ public class AuthenticationService {
         user.setVerificationCodeExpiration(LocalDateTime.now().plusMinutes(10));
         // Set enabled to false - this will be flipped once user submits verification code
         user.setEnabled(false);
+        sendVerificationEmail(user);
         // Return user
         return userRepository.save(user);
     }
