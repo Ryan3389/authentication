@@ -2,6 +2,7 @@ package com.authentication.authentication.Service;
 
 import com.authentication.authentication.DTO.LoginDTO;
 import com.authentication.authentication.DTO.RegisterUserDTO;
+import com.authentication.authentication.DTO.VerifyDTO;
 import com.authentication.authentication.Model.User;
 import com.authentication.authentication.Repository.UserRepository;
 import jakarta.mail.MessagingException;
@@ -58,7 +59,7 @@ public class AuthenticationService {
         return user;
     }
 
-    public void verifyUser(LoginDTO userInput) {
+    public void verifyUser(VerifyDTO userInput) {
         Optional<User> optionalUser = userRepository.findByEmail(userInput.getEmail());
 
         if(optionalUser.isPresent()) {
