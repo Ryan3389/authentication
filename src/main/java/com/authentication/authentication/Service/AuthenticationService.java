@@ -70,7 +70,7 @@ public class AuthenticationService {
                 throw new RuntimeException("Please verify your account before logging in");
             }
 
-            if(user.getVerificationCode().equals(generateVerificationCode())) {
+            if(user.getVerificationCode().equals(userInput.getVerificationCode())) {
                 user.setEnabled(true);
                 user.setVerificationCode(null);
                 user.setVerificationCodeExpiration(null);
