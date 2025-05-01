@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --nav-anchor-color: black;
+}
+header{
+    border: 1px solid;
+    padding: 10px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+
+.nav-links a{
+    margin: 0 5px;
+    text-decoration: none;
+    color: var(--nav-anchor-color);
+}
+
+/* Home Page */
+.hero-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.hero-article{
+    line-height: 1.5;
+}
+.hero-article h1{
+    font-size: 2.125rem;
+}
+
+.hero-article p{
+    font-size: 1.5rem;
+}
+
+.hero-article .btn{
+    margin: 0 10px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: black;
+}
