@@ -5,8 +5,8 @@ function HomePage(){
             <article className="hero-article">
                 <h1>Welcome to Our App</h1>
                 <p>This is the best decision of your life. Login or sign up to continue</p>
-                   <Link to={"/login"} className="btn">Login</Link>
-                   <Link to={"/signup"} className="btn">Sign Up</Link>
+                   <Link to={"/login"} className="login-cta btn">Login</Link>
+                   <Link to={"/signup"} className="signup-cta cta btn">Sign Up</Link>
             </article>
         </section>
     )

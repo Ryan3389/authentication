@@ -6,9 +6,14 @@
 :root{
     --nav-anchor-color: black;
 }
+body{
+    background-color: #f2f2f2 ;
+}
 header{
-    border: 1px solid;
-    padding: 10px;
+    /*border-bottom: 1px solid rgba(0,0,0,0.2);*/
+    border-bottom: 1px solid #9ca3af;
+
+    padding: 1em;
 }
 
 nav{
@@ -19,9 +24,22 @@ nav{
 }
 
 .nav-links a{
-    margin: 0 5px;
+    margin: 0 0.5em;
     text-decoration: none;
-    color: var(--nav-anchor-color);
+}
+.signup-btn{
+    background-color: #2496ff;
+    color: white;
+}
+.login-btn{
+    border: 1px solid #4f90ff;
+    color: 	#4f90ff;
+}
+
+.nav-btn{
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
 }
 
 /* Home Page */
@@ -37,15 +55,44 @@ nav{
 }
 .hero-article h1{
     font-size: 2.125rem;
+   color: #3b82f6;
+;
 }
 
 .hero-article p{
     font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #9ca3af;
 }
 
 .hero-article .btn{
     margin: 0 10px;
-    font-size: 1.2rem;
+    padding: 8px 16px;
+    border-radius: 5px;
     text-decoration: none;
-    color: black;
+    font-size: 1.2rem;
+}
+
+.hero-article .signup-cta{
+    background-color: #2496ff;
+    color: white;
+}
+
+.hero-article .login-cta{
+    background-color: #a6ff98;
+    color: black
+}
+
+/* Form */
+.form-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+}
+
+.input-div input{
+    width: 100%;
+    margin: 5px 0;
 }
