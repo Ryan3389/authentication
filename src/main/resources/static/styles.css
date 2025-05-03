@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hero-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.hero-article h1{
+    font-size: 2.125rem;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.hero-article p{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #9CA3AF;
+}
+
+.hero-article a{
+    margin: 10px 5px;
+    text-decoration: none;
+    background-color: #3B82F6;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+/* Form */
+.form-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.input-div input{
+    width: 100%;
+}
