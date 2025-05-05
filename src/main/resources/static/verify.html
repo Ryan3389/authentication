@@ -1,31 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-    <section class="form-section">
-        <form>
-            <h1>Verify</h1>
-            <div class="input-div">
-                <label for="email">Email</label>
-                <input
+<section class="form-section">
+    <form id="form">
+        <h1>Verify</h1>
+        <div class="input-div">
+            <label for="email">Email</label>
+            <input
                     type="email"
                     id="email"
                     name="email"
-                />
-            </div>
-            <div class="input-div">
-                <label for="verificationCode">Verification Code</label>
-                <input
+            />
+        </div>
+        <div class="input-div">
+            <label for="verificationCode">Verification Code</label>
+            <input
                     type="text"
                     id="verificationCode"
                     name="verificationCode"
-                />
-            </div>
-        </form>
-    </section>
+            />
+        </div>
+        <input type="submit"/>
+    </form>
+</section>
+<script src="verify.js"></script>
 </body>
 </html>
+
+>
