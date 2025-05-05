@@ -28,9 +28,11 @@ async function handleFormSubmit(e){
         }
         console.log("Success: data below: ")
         const data = await response.json()
+        window.location.assign("/verify")
         console.log(data)
     }
     catch (error) {
         console.error("error")
     }
 }
+

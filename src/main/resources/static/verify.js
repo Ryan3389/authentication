@@ -29,9 +29,16 @@ async function handleVerifyUser(e){
         }
         console.log("Success: data below: ")
         const data = await response.json()
-        console.log(data)
+        displayMessage(data)
+
     }
     catch (error) {
         console.error(error)
     }
+}
+function displayMessage(message){
+    const paragraphElement = document.createElement("p")
+    const text = document.createTextNode(message)
+    paragraphElement.appendChild(text)
+    document.body.appendChild(paragraphElement)
 }
