@@ -44,3 +44,28 @@
 .input-div input{
     width: 100%;
 }
+
+input[type="submit"]{
+    margin: 10px 5px;
+    text-decoration: none;
+    background-color: #3B82F6;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    border: 1px solid #3B82F6;
+}
+
+.input{
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+form h1{
+    font-size: 2.125rem;
+}
+
+label{
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}

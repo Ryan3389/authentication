@@ -9,6 +9,7 @@ import com.authentication.authentication.Service.AuthenticationService;
 import com.authentication.authentication.Service.JwtService;
 import com.authentication.authentication.Service.UserService;
 import org.apache.coyote.Response;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -41,7 +42,8 @@ public class AuthController {
         // Generate token
         String token = jwtService.generateToken(currentUser);
         // Generate response
-        UserResponse userResponse = new UserResponse(token, jwtService.getTokenExpirationTime());
+        String statusMessage = "Login Successful";
+        UserResponse userResponse = new UserResponse(token, jwtService.getTokenExpirationTime(), statusMessage);
         // Return - response
         return ResponseEntity.ok(userResponse);
     }
@@ -51,7 +53,11 @@ public class AuthController {
     public ResponseEntity<?> verifyUser(@RequestBody VerifyDTO verifyDTO) {
         try{
             authenticationService.verifyUser(verifyDTO);
-            return ResponseEntity.ok("Account Verified");
+            String message = "Account Verified";
+            String jsonString = "\"" + message + "\"";
+            return ResponseEntity.ok()
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .body(jsonString);
         }
         catch(Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());

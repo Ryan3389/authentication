@@ -8,9 +8,11 @@ import lombok.Setter;
 public class UserResponse {
     private String token;
     private long expiresIn;
+    private String status;
 
-    public UserResponse(String token, long expiresIn) {
+    public UserResponse(String token, long expiresIn, String status) {
         this.token = token;
         this.expiresIn = expiresIn;
+        this.status = status;
     }
 }
